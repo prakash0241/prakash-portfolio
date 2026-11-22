@@ -182,59 +182,108 @@ footer{position:relative;z-index:7;padding:22px max(7vw,32px);border-top:1px sol
 @media(max-width:850px){
   html{scroll-snap-type:none}
   .topbar{top:10px;width:calc(100% - 20px);height:50px;padding:0 14px}
-  .navlinks,.scrollhint,.character{display:none!important}
+  .navlinks,.scrollhint{display:none!important}
   .menu-toggle{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;font-size:9px;background:rgba(255,255,255,.07)}
   .navcta{padding:8px 11px;font-size:8.5px}
 
-  .ambient{left:50%;top:22%;width:95vw;height:95vw;opacity:.85}
+  /* Show character video in a clean framed showcase card at top of mobile */
+  .character{
+    display:block!important;
+    position:relative!important;
+    left:auto!important;top:auto!important;bottom:auto!important;
+    transform:none!important;
+    width:calc(100% - 36px)!important;
+    height:230px!important;
+    margin:74px auto 0!important;
+    opacity:1!important;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    background:radial-gradient(circle at 70% 35%,rgba(239,35,79,.22),rgba(13,14,24,.95) 70%);
+    box-shadow:0 14px 34px rgba(0,0,0,.55);
+  }
+  .character video{
+    position:relative!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center bottom!important;
+    transform:none!important;
+  }
+  .character:after{
+    background:linear-gradient(180deg,transparent 65%,rgba(8,9,16,.85) 100%)!important;
+  }
 
-  .scene{min-height:auto;padding:42px 18px;scroll-snap-align:none;width:100%}
-  .content,.left{width:100%;max-width:100%;margin:0 auto}
+  /* Fix left-edge alignment across all sections */
+  .scene{
+    display:block!important;
+    min-height:auto!important;
+    width:100%!important;
+    padding:34px 18px 42px!important;
+    scroll-snap-align:none!important;
+  }
   #home.scene{
-    min-height:auto;
-    padding:96px 18px 46px;
-    background:radial-gradient(circle at 80% 18%,rgba(239,35,79,.22),transparent 58%);
+    padding-top:20px!important;
+    padding-bottom:44px!important;
     border-bottom:1px solid rgba(255,255,255,.08);
   }
-  .scene:before,.scene:nth-child(even):before{background:transparent}
+  .scene:before,.scene:nth-child(even):before{background:transparent!important}
+  .content,.left{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
 
-  .counter{position:static;display:inline-block;margin-bottom:8px;font-size:8.5px;color:#ff6b88}
-  .location-pill{font-size:8px;padding:5px 10px;margin-bottom:14px}
+  /* Unpin left sidebar counter so it sits cleanly above each heading */
+  .counter{
+    position:static!important;
+    left:auto!important;top:auto!important;
+    transform:none!important;
+    writing-mode:horizontal-tb!important;
+    display:block!important;
+    margin-bottom:8px!important;
+    font-size:9px!important;
+    letter-spacing:.18em!important;
+    color:#ff6b88!important;
+  }
+
+  .location-pill{font-size:8px;padding:5px 10px;margin-bottom:12px}
   .eyebrow{font-size:9px;letter-spacing:.16em;margin-bottom:10px}
-  .hero-title{font-size:clamp(42px,12vw,64px);line-height:.94;margin-bottom:16px}
-  .section-title{font-size:clamp(36px,10.5vw,54px);line-height:.94;margin-bottom:14px}
-  .contact-title{font-size:clamp(44px,12vw,66px);line-height:.92;margin-bottom:16px}
-  .hero-copy,.body-copy{font-size:13.5px;line-height:1.78;color:#d0cfd8}
+  .hero-title{font-size:clamp(40px,11.5vw,60px);line-height:.95;margin-bottom:14px}
+  .section-title{font-size:clamp(34px,10.5vw,52px);line-height:.95;margin-bottom:14px}
+  .contact-title{font-size:clamp(42px,11.5vw,62px);line-height:.94;margin-bottom:16px}
+  .hero-copy,.body-copy{font-size:13.5px;line-height:1.75;color:#d0cfd8;max-width:100%}
 
-  .buttons{gap:9px;margin-top:20px}
+  .buttons{gap:9px;margin-top:18px;width:100%}
   .btn{padding:12px 14px;font-size:9px;flex:1 1 auto;justify-content:center}
 
-  .stats{grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+  .stats{grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;width:100%}
   .stat{padding:15px;min-height:96px}
   .stat strong{font-size:34px}
   .stat span{font-size:8px}
 
-  .services{margin-top:16px}
+  .services{margin-top:16px;width:100%}
   .service{grid-template-columns:28px 1fr;gap:8px;padding:14px 10px}
   .service:hover{padding-left:10px}
   .service .tag{grid-column:2;justify-self:start;margin-top:4px;font-size:7.5px}
 
-  .project-card{padding:18px 16px}
+  .project-card{padding:18px 16px;width:100%}
   .project-card h3{font-size:17px}
   .project-links a{flex:1 1 auto;text-align:center}
 
-  .certs,.skill-layout,.admin-grid{grid-template-columns:1fr;gap:10px}
+  .certs,.skill-layout,.admin-grid{grid-template-columns:1fr;gap:10px;width:100%}
   .cert{min-height:auto;padding:16px}
   .skill-panel{padding:16px}
 
   .timeline{padding-left:18px;margin-left:4px}
   .timeline-item:before{left:-23px;width:8px;height:8px}
 
-  .contact-box{padding:18px 15px}
+  .contact-box{padding:18px 15px;width:100%}
   .contact-direct{font-size:9.5px;padding:10px}
   .socials a{flex:1 1 calc(50% - 9px);text-align:center}
 
-  .admin-shell{padding:16px;margin:10px auto 30px}
+  .admin-shell{padding:16px;margin:10px auto 30px;width:100%}
   .admin-header h2{font-size:22px}
   footer{padding:18px;gap:8px;flex-direction:column;text-align:center;font-size:8px}
 }
