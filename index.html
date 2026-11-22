@@ -57,7 +57,7 @@ a{color:inherit}
 
 /* Scenes & Layout */
 main{position:relative;z-index:5}
-.scene{min-height:100svh;position:relative;display:flex;align-items:center;padding:125px max(7vw,32px) 90px;scroll-snap-align:start;isolation:isolate}
+.scene{min-height:100svh;position:relative;display:flex;align-items:center;padding:125px max(7vw,32px) 90px;isolation:isolate}
 .scene:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,9,16,.98) 0%,rgba(8,9,16,.84) 39%,rgba(8,9,16,.18) 76%,rgba(8,9,16,.65) 100%)}
 .scene:nth-child(even):before{background:linear-gradient(90deg,rgba(8,9,16,.92),rgba(8,9,16,.58) 55%,rgba(8,9,16,.84))}
 .content{width:min(1180px,100%);margin:auto;position:relative;z-index:6}
@@ -186,33 +186,8 @@ footer{position:relative;z-index:7;padding:22px max(7vw,32px);border-top:1px sol
   .menu-toggle{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;font-size:9px;background:rgba(255,255,255,.07)}
   .navcta{padding:8px 11px;font-size:8.5px}
 
-  /* Show character video in a clean framed showcase card at top of mobile */
-  .character{
-    display:block!important;
-    position:relative!important;
-    left:auto!important;top:auto!important;bottom:auto!important;
-    transform:none!important;
-    width:calc(100% - 36px)!important;
-    height:230px!important;
-    margin:74px auto 0!important;
-    opacity:1!important;
-    border-radius:14px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.12);
-    background:radial-gradient(circle at 70% 35%,rgba(239,35,79,.22),rgba(13,14,24,.95) 70%);
-    box-shadow:0 14px 34px rgba(0,0,0,.55);
-  }
-  .character video{
-    position:relative!important;
-    width:100%!important;
-    height:100%!important;
-    object-fit:contain!important;
-    object-position:center bottom!important;
-    transform:none!important;
-  }
-  .character:after{
-    background:linear-gradient(180deg,transparent 65%,rgba(8,9,16,.85) 100%)!important;
-  }
+  /* Hide character/video on mobile only */
+  .character{display:none!important}
 
   /* Fix left-edge alignment across all sections */
   .scene{
@@ -223,7 +198,7 @@ footer{position:relative;z-index:7;padding:22px max(7vw,32px);border-top:1px sol
     scroll-snap-align:none!important;
   }
   #home.scene{
-    padding-top:20px!important;
+    padding-top:92px!important;
     padding-bottom:44px!important;
     border-bottom:1px solid rgba(255,255,255,.08);
   }
