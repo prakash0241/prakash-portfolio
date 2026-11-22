@@ -1,3 +1,9 @@
+﻿## 🚀 Live Portfolio
+
+👉 **[View Live Website](https://prakash0241.github.io/prakash-portfolio/)**: https://prakash0241.github.io/prakash-portfolio/ 
+
+---
+
 # Prakash — Java Full Stack Developer Portfolio
 
 Interactive single-page developer portfolio featuring a scroll-scrubbed cinematic background video, animated career metrics, and a built-in Firebase Cloud CMS admin dashboard.
